@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
+    integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      <div class="container"  ng-app="miApp">
+          <div class="header clearfix">
+            <nav>
+              <ul class="nav nav-pills pull-right">
+                <li role="presentation"><a href="#/">Dashboard</a></li>
+                <li role="presentation"  ng-hide="authenticated"><a href="#/login">Login</a></li>
+                <li role="presentation" ng-hide="authenticated"><a href="#/register">Register</a></li>
+                <li role="presentation"><a href="#/" ng-click="signout()" ng-show="authenticated">Logout</a></li>
+              </ul>
+            </nav>
+            <h3 class="text-muted"><%= title %></h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+                <div ng-view></div>
+            </div>
+          </div>
+          <footer class="footer">
+            <p>&copy; 2016 Luis Camilo Jiménez Álvarez</p>
+          </footer>
+        </div> <!-- /container -->
+      
+        <!--Scripts de JQuery y Angularjs-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-sanitize.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-resource.js"></script>
+        <!-- Librerías para relazar gráficos de Google -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/0.1.0/ng-google-chart.min.js" type="text/javascript"></script>
+        <!--Bootstrap-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
+        crossorigin="anonymous"></script>
+        <!--Scripts de MathJax-->
+        <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+        <!--Scripts de math.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.2.1/math.min.js" type="text/javascript"></script>
+        <!-- App-->
+        <script src="javascripts/mathApp.js"></script>
+        <script src="javascripts/javascript-cas.min.js"></script>
+        <script src="javascripts/coffeequate.min.js"></script>
+        <!-- Controllers -->
+        <script src="javascripts/controllers/mainController.js"></script>
+        <script src="javascripts/controllers/authController.js"></script>
+        <!-- Directives -->
+        <script src="javascripts/directives/mathJaxBind.js"></script>
+        <!-- Services -->
+      
+  </body>
+</html>
